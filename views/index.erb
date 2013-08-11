@@ -1,5 +1,9 @@
 <%= erb :postAdd if admin? %>
-<p class="pure-u-1">
-	<a href="#">[p]</a>
-	lala ich sage sachen! http://example.com
-</p>
+
+<% for post in posts %>
+	<p class="pure-u-1">
+		<%= "<a href='/edit/" + post.id + "'>[e]</a>" if admin? %>
+		<%= "<a href='" + post.id + "'>[p]</a>" if !onePost %>
+		<%= post.text %>
+	</p>
+<% end %>

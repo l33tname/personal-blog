@@ -9,6 +9,7 @@ helpers do
 end
 
 configure :development do
+  AppConfig = YAML.load_file(File.expand_path("config.yaml", File.dirname(__FILE__)))["development"]
   MongoMapper.database = 'blog'
   set :show_exceptions, true
   DEBUG = false
@@ -38,32 +39,43 @@ post '/login/?' do
     session["isLogdIn"] = true
     redirect '/'
   else
-    erb :error401
+    halt 401
   end
 end
 
 get('/logout/?'){ session["isLogdIn"] = false ; redirect '/' }
 
+
 get "/" do
-	redirect "index.html"
-end
-
-get "/index.htm" do
-	redirect "index.html"
-end
-
-get "/index/?" do
-	redirect "index.html"
-end
-
-get "/blog/?" do
-	erb :index
+	erb :index, :locals => {:posts => Post.sort(:created_at.desc).all(), :onePost => false}
 end
 
 get "/impressum/?" do
 	erb :impressum
 end
 
-post "/add/?" do
-	redirect "/blog"
+post "/add/:id" do |id|
+  if id == nil
+    post = Post.new(:text => params["text"])
+  else
+    post = Post.find(id)
+    puts post.text
+    if post == nil
+      halt 404
+    end
+    post.text = params["text"]
+  end
+
+	if !post.save
+		halt 500
+	end
+	redirect "/"
+end
+
+get "/edit/:id" do |id|
+	erb :postAdd, :locals => {:post => Post.find(id)}
+end
+
+get "/:id" do |id|
+	erb :index, :locals => {:posts => Post.where(:id => id).sort(:created_at.desc), :onePost => true}
 end

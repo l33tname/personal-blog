@@ -1,7 +1,6 @@
 <div class="pure-u-1">
-	<form action="/add" methode="post" class="pure-form form">
-		<input type="text" placeholder="Title" class="pure-input-1" required>
-		<textarea class="pure-input-1" required></textarea>
+	<form action="/add/<%= (defined?(post)).nil? ? 'nil' : post.id %>" method="post" class="pure-form form">
+		<textarea name="text" class="pure-input-1" required><%= post.text if !(defined?(post)).nil? %></textarea>
 		<input type="submit" value="save" class="pure-button pure-button-primary pull-right">
 	</form>
 </div>
