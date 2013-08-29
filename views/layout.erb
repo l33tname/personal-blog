@@ -37,7 +37,8 @@
         .pull-right{float: right;}
         .form input { margin-bottom: 10px;}
         .form textarea { margin-bottom: 10px; height: 100px;}
-        p {margin-bottom: 4px; margin-top: 4px;}
+        p {margin-top: 8px; margin-bottom: 0px;}
+        .aUnstyle {text-decoration: none; color: white;}
     </style>
 </head>
 <body>
@@ -45,11 +46,11 @@
 <div class="wrapper">
     <div class="banner">
         <h1 class="banner-head">
-            Primärquelle<br>
+            <a href="/" class="aUnstyle">Primärquelle</a><br>
             Seriösliche Nachrichten!
         </h1>
     </div>
-
+    <img src="https://stats.l33t.aries.uberspace.de/piwik/piwik.php?idsite=3&amp;rec=1" style="border:0" alt="" />
     <div class="container pure-g-r">
         <%= yield %>
     </div>
@@ -81,6 +82,20 @@
         </div>
     </div>
 </div>
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["trackPageView"]);
+  _paq.push(["enableLinkTracking"]);
 
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://stats.l33t.aries.uberspace.de/piwik/";
+    _paq.push(["setTrackerUrl", u+"piwik.php"]);
+    _paq.push(["setSiteId", "3"]);
+    var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+    g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
 </body>
 </html>
