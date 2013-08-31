@@ -1,5 +1,6 @@
 require "sinatra"
 require "redcarpet"
+require 'builder'
 require_relative "model.rb"
 
 use Rack::Session::Pool
@@ -53,6 +54,11 @@ end
 
 get "/impressum/?" do
 	erb :impressum
+end
+
+get "/feed/?" do
+  @posts = Post.sort(:created_at.desc).all()
+  builder :rss
 end
 
 post "/add/:id" do |id|
