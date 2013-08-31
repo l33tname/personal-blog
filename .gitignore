@@ -1,5 +1,6 @@
 #ignore the config
 config.yaml
+Gemfile.lock
 bin/
 .bundle/
 vendor/
