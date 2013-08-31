@@ -9,7 +9,7 @@ xml.rss :version => "2.0" do
       xml.item do
         xml.title post.text.slice(0, 30)
         xml.link "http://blog.l33t.name/#{post.id}"
-        xml.description post.text
+        xml.description Md.render(post.text).gsub("</p>", "").gsub("<p>", "")
         xml.pubDate Time.parse(post.created_at.to_s).rfc822()
         xml.guid "http://blog.l33t.name/#{post.id}"
       end
