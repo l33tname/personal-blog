@@ -29,11 +29,11 @@ configure :production do
 end
 
 error 401 do
-	"fuck no login"
+  "fuck no login"
 end
 
 get "/login/?" do
-	erb :login
+  erb :login
 end
 
 post '/login/?' do
@@ -49,11 +49,11 @@ get('/logout/?'){ session["isLogdIn"] = false ; redirect '/' }
 
 
 get "/" do
-	erb :index, :locals => {:posts => Post.sort(:created_at.desc).all(), :onePost => false}
+  erb :index, :locals => {:posts => Post.sort(:created_at.desc).all(), :onePost => false}
 end
 
 get "/impressum/?" do
-	erb :impressum
+  erb :impressum
 end
 
 get "/feed/?" do
@@ -73,16 +73,16 @@ post "/add/:id" do |id|
     post.text = params["text"]
   end
 
-	if !post.save
-		halt 500
-	end
-	redirect "/"
+  if !post.save
+    halt 500
+  end
+  redirect "/"
 end
 
 get "/edit/:id" do |id|
-	erb :postAdd, :locals => {:post => Post.find(id)}
+  erb :postAdd, :locals => {:post => Post.find(id)}
 end
 
 get "/:id" do |id|
-	erb :index, :locals => {:posts => Post.where(:id => id).sort(:created_at.desc), :onePost => true}
+  erb :index, :locals => {:posts => Post.where(:id => id).sort(:created_at.desc), :onePost => true}
 end
