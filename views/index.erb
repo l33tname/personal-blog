@@ -1,9 +1,11 @@
-<%= erb :postAdd if admin? %>
+<div class="pure-u">
+  <%= erb :postAdd, :layout => nil if admin? %>
 
-<% for post in posts %>
-    <p class="pure-u-1">
-        <%= "<a href='/edit/" + post.id + "'>[e]</a>" if admin? %>
-        <%= "<a href='" + post.id + "'>[p]</a>" if !onePost %>
-        <%= Md.render(post.text).gsub("</p>", "").gsub("<p>", "") %>
-    </p>
-<% end %>
+  <% for post in posts %>
+      <p class="pure-u-1">
+          <%= "<a href='/edit/" + post.id + "'>[e]</a>" if admin? %>
+          <%= "<a href='" + post.id + "'>[p]</a>" if !onePost %>
+          <%= Md.render(post.text).gsub("</p>", "").gsub("<p>", "") %>
+      </p>
+  <% end %>
+</div>
