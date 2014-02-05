@@ -10,17 +10,22 @@ helpers do
   def protected! ; halt 401 unless admin? ; end
 end
 
+configure do
+  set :erb, :layout => :'meta-layout/layout'
+  Md = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true, :space_after_headers => true)
+end
+
 configure :development do
   AppConfig = YAML.load_file(File.expand_path("config.yaml", File.dirname(__FILE__)))["development"]
+  
   MongoMapper.database = 'blog'
+  
   set :show_exceptions, true
-  Md = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true, :space_after_headers => true)
   DEBUG = true
 end
 
 configure :production do
   AppConfig = YAML.load_file(File.expand_path("config.yaml", File.dirname(__FILE__)))["production"]
-  Md = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true, :space_after_headers => true)
   
   MongoMapper.connection = Mongo::Connection.new(AppConfig["Mongo"]["Host"], AppConfig["Mongo"]["Port"].to_i)
   MongoMapper.database = 'blog'

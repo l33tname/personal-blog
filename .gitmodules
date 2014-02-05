@@ -1,0 +1,3 @@
+[submodule "views/meta-layout"]
+	path = views/meta-layout
+	url = https://github.com/l33tname/meta-layout.git
