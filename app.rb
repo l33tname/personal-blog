@@ -1,6 +1,8 @@
 require "sinatra"
 require "redcarpet"
 require 'builder'
+require "bcrypt"
+
 require_relative "model.rb"
 
 use Rack::Session::Pool
@@ -47,7 +49,7 @@ get "/login/?" do
 end
 
 post '/login/?' do
-  if params['username'] == AppConfig["User"] && params['pass'] == AppConfig["Pass"]
+  if params['username'] == ENV['USER'] && params['pass'] == BCrypt::Engine.hash_secret(pass, ENV['SALT'])
     session["isLogdIn"] = true
     redirect '/'
   else
