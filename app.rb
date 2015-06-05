@@ -29,7 +29,7 @@ end
 
 configure :production do
   # mongodb://user:pass@host:port/dbname
-  MongoMapper.setup({'production' => {'uri' => ENV['MONGODB_URI']}}, 'production')
+  MongoMapper.setup({'production' => {'uri' => ENV['MONGODB_BLOG_URI']}}, 'production')
   DEBUG = false
 end
 
