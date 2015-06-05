@@ -43,7 +43,7 @@ get "/login/?" do
 end
 
 post '/login/?' do
-  if params['username'] == ENV['USER'] && params['pass'] == BCrypt::Engine.hash_secret(pass, ENV['SALT'])
+  if params['username'] == ENV['USER'] && ENV['PASS'] == BCrypt::Engine.hash_secret(params['pass'], ENV['SALT'])
     session["isLogdIn"] = true
     redirect '/'
   else
