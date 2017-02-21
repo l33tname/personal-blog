@@ -1,3 +1,4 @@
+require 'active_model/serializers'
 require "mongo_mapper"
 
 class Post

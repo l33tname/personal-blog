@@ -1,6 +1,6 @@
 require "sinatra"
 require "redcarpet"
-require 'builder'
+require "builder"
 require "bcrypt"
 
 require_relative "model.rb"
