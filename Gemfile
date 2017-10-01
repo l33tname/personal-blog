@@ -6,4 +6,5 @@ gem "redcarpet"
 gem "bcrypt"
 gem "puma"
 
+gem "mysql2"
 gem "sqlite3"

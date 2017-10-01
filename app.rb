@@ -2,6 +2,7 @@ require "sinatra"
 require "redcarpet"
 require "builder"
 require "bcrypt"
+require "mysql2"
 require "sequel"
 
 use Rack::Session::Pool
@@ -27,8 +28,8 @@ end
 
 
 configure :production do
-  # mongodb://user:pass@host:port/dbname
-  # MongoMapper.setup({'production' => {'uri' => ENV['MONGODB_BLOG_URI']}}, 'production')
+  # mysql2://user:pass@host/dbname
+  DB = Sequel.connect(ENV['MYSQL_BLOG_URI'])
   DEBUG = false
 end
 
