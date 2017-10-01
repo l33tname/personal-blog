@@ -3,8 +3,8 @@
 
   <% for post in posts %>
       <p class="pure-u-1">
-          <%= "<a href='/edit/" + post.id + "'>[e]</a>" if admin? %>
-          <%= "<a href='" + post.id + "'>[p]</a>" if !onePost %>
+          <%= "<a href='/edit/" + post.id.to_s + "'>[e]</a>" if admin? %>
+          <%= "<a href='" + post.id.to_s + "'>[p]</a>" if !onePost %>
           <%= Md.render(post.text).gsub("</p>", "").gsub("<p>", "") %>
       </p>
   <% end %>
