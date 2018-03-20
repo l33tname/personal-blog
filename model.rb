@@ -5,6 +5,7 @@ Sequel::Model.plugin :timestamps
 DB.create_table? :posts do
   primary_key :id
   String :text, text: true
+  String :url
   DateTime :created_at
   DateTime :updated_at
 end
