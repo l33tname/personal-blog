@@ -7,6 +7,12 @@ require "sequel"
 
 use Rack::Session::Pool
 
+class String
+    def is_i?
+       /\A[-+]?\d+\z/ === self
+    end
+end
+
 helpers do
   def admin? ; session["isLogdIn"] == true || DEBUG; end
   def protected! ; halt 401 unless admin? ; end
@@ -91,5 +97,11 @@ get "/edit/:id" do |id|
 end
 
 get "/:id" do |id|
-  erb :index, :locals => {:posts => Array(Post.find(:id => id)), :onePost => true}
+  post = nil
+  if id.is_i?
+    post = Post.find(:id => id)
+  else
+    post = Post.find(:url => id)
+  end
+  erb :index, :locals => {:posts => Array(post), :onePost => true}
 end
