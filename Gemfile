@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 gem "sinatra"
 gem "builder"
-gem "activemodel-serializers-xml"
-gem "active_model_serializers"
-gem "mongo_mapper"
-gem "bson_ext"
+gem "sequel"
 gem "redcarpet"
 gem "bcrypt"
 gem "puma"
+
+gem "mysql2"
+gem "sqlite3"
