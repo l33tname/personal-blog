@@ -7,4 +7,4 @@ gem "bcrypt"
 gem "puma"
 
 gem "mysql2"
-gem "sqlite3"
+gem "sqlite3", :group => :development
