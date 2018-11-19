@@ -6,5 +6,5 @@ gem "redcarpet"
 gem "bcrypt"
 gem "puma"
 
-gem "mysql2"
+gem "mysql2", :group => :production
 gem "sqlite3", :group => :development
