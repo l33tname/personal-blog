@@ -1,10 +1,10 @@
-Blog
+Personal Blog
 =========
 
 
 # Production
 
-To run it against mysql you need the mysql header files:
+To run with mysql you need the mysql header files:
 
 ```
 sudo dnf install mysql-devel
