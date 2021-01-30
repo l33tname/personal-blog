@@ -7,14 +7,14 @@ GEM
       ruby2_keywords (~> 0.0.1)
     mysql2 (0.5.3)
     nio4r (2.5.4)
-    puma (5.0.2)
+    puma (5.2.0)
       nio4r (~> 2.0)
     rack (2.2.3)
     rack-protection (2.1.0)
       rack
-    redcarpet (3.5.0)
-    ruby2_keywords (0.0.2)
-    sequel (5.37.0)
+    redcarpet (3.5.1)
+    ruby2_keywords (0.0.4)
+    sequel (5.40.0)
     sinatra (2.1.0)
       mustermann (~> 1.0)
       rack (~> 2.2)
@@ -24,7 +24,7 @@ GEM
     tilt (2.0.10)
 
 PLATFORMS
-  ruby
+  x86_64-linux
 
 DEPENDENCIES
   bcrypt
@@ -37,4 +37,4 @@ DEPENDENCIES
   sqlite3
 
 BUNDLED WITH
-   2.1.4
+   2.2.3
