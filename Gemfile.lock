@@ -6,15 +6,15 @@ GEM
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
     mysql2 (0.5.3)
-    nio4r (2.5.7)
-    puma (5.3.1)
+    nio4r (2.5.8)
+    puma (5.5.2)
       nio4r (~> 2.0)
     rack (2.2.3)
     rack-protection (2.1.0)
       rack
     redcarpet (3.5.1)
-    ruby2_keywords (0.0.4)
-    sequel (5.40.0)
+    ruby2_keywords (0.0.5)
+    sequel (5.49.0)
     sinatra (2.1.0)
       mustermann (~> 1.0)
       rack (~> 2.2)
@@ -37,4 +37,4 @@ DEPENDENCIES
   sqlite3
 
 BUNDLED WITH
-   2.2.3
+   2.2.29
