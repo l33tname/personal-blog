@@ -5,23 +5,23 @@ GEM
     builder (3.2.4)
     mustermann (3.0.0)
       ruby2_keywords (~> 0.0.1)
-    mysql2 (0.5.4)
+    mysql2 (0.5.5)
     nio4r (2.5.8)
-    puma (6.0.0)
+    puma (6.1.0)
       nio4r (~> 2.0)
-    rack (2.2.4)
-    rack-protection (3.0.4)
+    rack (2.2.6.2)
+    rack-protection (3.0.5)
       rack
-    redcarpet (3.5.1)
+    redcarpet (3.6.0)
     ruby2_keywords (0.0.5)
-    sequel (5.63.0)
-    sinatra (3.0.4)
+    sequel (5.65.0)
+    sinatra (3.0.5)
       mustermann (~> 3.0)
       rack (~> 2.2, >= 2.2.4)
-      rack-protection (= 3.0.4)
+      rack-protection (= 3.0.5)
       tilt (~> 2.0)
-    sqlite3 (1.5.4-x86_64-linux)
-    tilt (2.0.11)
+    sqlite3 (1.6.1-x86_64-linux)
+    tilt (2.1.0)
 
 PLATFORMS
   x86_64-linux
@@ -37,4 +37,4 @@ DEPENDENCIES
   sqlite3
 
 BUNDLED WITH
-   2.3.22
+   2.4.7
