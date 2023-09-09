@@ -1,27 +1,29 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    bcrypt (3.1.18)
+    bcrypt (3.1.19)
+    bigdecimal (3.1.4)
     builder (3.2.4)
     mustermann (3.0.0)
       ruby2_keywords (~> 0.0.1)
     mysql2 (0.5.5)
-    nio4r (2.5.8)
-    puma (6.2.1)
+    nio4r (2.5.9)
+    puma (6.3.1)
       nio4r (~> 2.0)
-    rack (2.2.6.4)
-    rack-protection (3.0.5)
-      rack
+    rack (2.2.8)
+    rack-protection (3.1.0)
+      rack (~> 2.2, >= 2.2.4)
     redcarpet (3.6.0)
     ruby2_keywords (0.0.5)
-    sequel (5.67.0)
-    sinatra (3.0.5)
+    sequel (5.72.0)
+      bigdecimal
+    sinatra (3.1.0)
       mustermann (~> 3.0)
       rack (~> 2.2, >= 2.2.4)
-      rack-protection (= 3.0.5)
+      rack-protection (= 3.1.0)
       tilt (~> 2.0)
-    sqlite3 (1.6.2-x86_64-linux)
-    tilt (2.1.0)
+    sqlite3 (1.6.4-x86_64-linux)
+    tilt (2.2.0)
 
 PLATFORMS
   x86_64-linux
